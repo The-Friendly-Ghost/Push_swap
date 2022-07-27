@@ -143,5 +143,6 @@ void	sort_all(t_stack **a, t_stack **b)
 		push_b_to_a(b, a, 1);
 		reset_moves_struct(moves);
 	}
+	free(moves);
 	final_rotate(a);
 }
