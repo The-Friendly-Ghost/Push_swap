@@ -1,5 +1,7 @@
 # Push_Swap
 
+[![CodeFactor](https://www.codefactor.io/repository/github/the-friendly-ghost/push_swap/badge)](https://www.codefactor.io/repository/github/the-friendly-ghost/push_swap)
+
 *"This project will make you sort data on a stack, with a limited set of instructions, using
 the lowest possible number of actions. To succeed you’ll have to manipulate various
 types of algorithms and choose the most appropriate solution (out of many) for an
