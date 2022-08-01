@@ -1,4 +1,4 @@
-# Push_Swap
+# Push_Swap 📊
 
 [![CodeFactor](https://www.codefactor.io/repository/github/the-friendly-ghost/push_swap/badge)](https://www.codefactor.io/repository/github/the-friendly-ghost/push_swap)
 
