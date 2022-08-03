@@ -6,7 +6,7 @@
 #    By: cpost <cpost@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/04/20 11:27:58 by cpost         #+#    #+#                  #
-#    Updated: 2022/07/05 14:21:13 by cpost         ########   odam.nl          #
+#    Updated: 2022/08/03 16:05:31 by cpost         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ LIBPRINTF_PATH = ./lib/printf/
 NAME = push_swap
 BONUS_NAME = checker
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
+CFLAGS = -Wall -Wextra -Werror -g
 
 SRC_NAME = $(shell ls $(SRC_PATH))
 SHR_NAME = $(shell ls $(SHR_PATH))
@@ -91,5 +91,7 @@ fclean: clean fcleanlib
 	@rm -f $(BONUS_NAME)
 
 re: fclean all
+
+rebonus : fclean bonus
 
 .PHONY: clean, fclean, re, all
