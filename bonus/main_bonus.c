@@ -6,7 +6,7 @@
 /*   By: cpost <cpost@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/27 14:40:22 by cpost         #+#    #+#                 */
-/*   Updated: 2022/07/11 16:53:06 by cpost         ########   odam.nl         */
+/*   Updated: 2022/08/03 17:18:16 by cpost         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,14 @@ static void	execute_command(char *command, t_stack **a, t_stack **b)
 		print_error_and_exit(command, a, b);
 }
 
-static void	free_stack_and_buffer_and_exit(t_stack **a, t_stack **b, char *buf)
+static void	free_and_exit(t_stack **a, t_stack **b, char *buf, char t)
 {
 	char	c;
 
 	c = '0';
-	while (c != '\n')
+	while (c != '\n' && t != '\n')
 		read(0, &c, 1);
-	free_stacks(a, b);
-	if (buf)
-		free(buf);
-	ft_printf("Error\n");
+	print_error_and_exit(buf, a, b);
 	exit (1);
 }
 
@@ -75,7 +72,7 @@ static char	*get_next_command(t_stack **a, t_stack **b, int rd, int total_rd)
 		if (check_rd(rd, buffer) == 1)
 			return (NULL);
 		if (total_rd > 5 || rd == -1)
-			free_stack_and_buffer_and_exit(a, b, buffer);
+			free_and_exit(a, b, buffer, c);
 		buffer[total_rd - 1] = c;
 		buffer[total_rd] = '\0';
 		if (c == '\n')
